@@ -6,3 +6,5 @@
 # install applications from Brewfile
 brew tap Homebrew/bundle
 brew bundle
+
+chsh -s /bin/zsh
