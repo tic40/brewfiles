@@ -1,7 +1,7 @@
 cask_args appdir: "/Applications"
 tap "homebrew/core"
 tap "homebrew/bundle"
-tap "caskroom/cask"
+tap "homebrew/cask"
 brew "awscli"
 brew "clang-format"
 brew "curl"
