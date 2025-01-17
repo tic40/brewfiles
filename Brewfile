@@ -1,5 +1,4 @@
 cask_args appdir: "/Applications"
-tap "homebrew/bundle"
 brew "awscli"
 brew "clang-format"
 brew "curl"
