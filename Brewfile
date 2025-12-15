@@ -1,4 +1,5 @@
 cask_args appdir: "/Applications"
+brew "act"
 brew "awscli"
 brew "clang-format"
 brew "curl"
