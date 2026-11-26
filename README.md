@@ -21,6 +21,16 @@ cd brewfiles
 ./setup.sh private  # or: ./setup.sh work
 ```
 
+## Maintenance
+
+Run weekly. Upgrades packages, removes unused dependencies and old versions, and reports differences from the Brewfile (nothing outside the Brewfile is removed automatically).
+
+```bash
+./maintenance.sh private  # or: ./maintenance.sh work
+```
+
+Test: `./test/maintenance_test.sh`
+
 ## Update
 
 Edit the Brewfiles manually (`brew bundle dump` would overwrite the split structure).
