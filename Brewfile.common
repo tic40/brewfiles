@@ -2,8 +2,6 @@ cask_args appdir: "/Applications"
 brew 'act'
 brew 'atuin'
 brew 'awscli'
-brew 'clang-format'
-brew 'curl'
 brew 'eza'
 brew 'fzf'
 brew 'gcc'
