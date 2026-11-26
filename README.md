@@ -2,6 +2,12 @@
 
 Brewfile management for macOS setup.
 
+## Structure
+
+- `Brewfile.common` - packages for all machines
+- `Brewfile.private` - private machine (includes common)
+- `Brewfile.work` - work machine (includes common)
+
 ## Prerequisites
 
 - macOS
@@ -12,18 +18,22 @@ Brewfile management for macOS setup.
 ```bash
 git clone https://github.com/tic40/brewfiles.git
 cd brewfiles
-./setup.sh
+./setup.sh private  # or: ./setup.sh work
 ```
 
 ## Update
 
+Edit the Brewfiles manually (`brew bundle dump` would overwrite the split structure).
+
 ```bash
-# Export current packages to Brewfile
-brew bundle dump --force --file=Brewfile
+PROFILE=private  # or work
 
 # Install from Brewfile
-brew bundle install --file=Brewfile
+brew bundle install --file=Brewfile.$PROFILE
+
+# Check what would be removed (packages not in Brewfile)
+brew bundle cleanup --file=Brewfile.$PROFILE
 
 # Remove packages not in Brewfile
-brew bundle cleanup --file=Brewfile
+brew bundle cleanup --force --file=Brewfile.$PROFILE
 ```

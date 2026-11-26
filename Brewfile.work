@@ -1,0 +1,2 @@
+instance_eval(File.read(File.join(__dir__, "Brewfile.common")))
+cask 'firefox'

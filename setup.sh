@@ -2,6 +2,12 @@
 set -eu
 
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+PROFILE="${1:-}"
+
+if [[ "$PROFILE" != "private" && "$PROFILE" != "work" ]]; then
+  echo "Usage: $0 <private|work>" >&2
+  exit 1
+fi
 
 # install Homebrew if not exists
 if ! command -v brew &> /dev/null; then
@@ -12,4 +18,9 @@ else
 fi
 
 # install packages from Brewfile
-brew bundle install --file="$SCRIPT_DIR/Brewfile"
+brew bundle install --file="$SCRIPT_DIR/Brewfile.$PROFILE"
+
+# install Claude Code (native installer)
+if ! command -v claude &> /dev/null; then
+  curl -fsSL https://claude.ai/install.sh | bash
+fi
