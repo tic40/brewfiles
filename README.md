@@ -29,7 +29,7 @@ Run weekly. Upgrades packages, removes unused dependencies and old versions, and
 ./maintenance.sh private  # or: ./maintenance.sh work
 ```
 
-Test: `./test/maintenance_test.sh`
+Test: `./test/setup_test.sh && ./test/maintenance_test.sh`
 
 ## Update
 
